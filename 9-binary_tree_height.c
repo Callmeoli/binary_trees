@@ -3,8 +3,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_hieght- calculate binary tree height
- * @tree: binary tree
+ * binary_tree_is_leaf - calculate binary tree height
+ * @node: binary tree
+ * Return: 0 or 1
 */
 int binary_tree_is_leaf(const binary_tree_t *node)
 {
@@ -14,13 +15,18 @@ int binary_tree_is_leaf(const binary_tree_t *node)
 		return (1);
 	return (0);
 }
-
+/**
+ * binary_tree_height- calculate binary tree height
+ * @tree: binary tree
+ * Return: 0 or 1
+*/
 size_t binary_tree_height(const binary_tree_t *tree)
 {
 	size_t h, left, right;
-	if( !tree || binary_tree_is_leaf(tree))
+
+	if (!tree || binary_tree_is_leaf(tree))
 	{
-		return 0;
+		return (0);
 	}
 	left = binary_tree_height(tree->left);
 	right = binary_tree_height(tree->right);
